@@ -8,23 +8,23 @@ import './links.css';
 const supabase = import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_ANON_KEY ? createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_ANON_KEY) : null;
 
 const products = [
-  { id:'01', name:'Cloud Skin Tint', type:'Skin', shade:'LIGHTWEIGHT · DEWY FINISH', price:14500, rating:'4.9', reviews:128, badge:'BESTSELLER', image:'photo-1611930022073-b7a4ba5fcccd', tone:'sand', color:'#e7c9aa' },
+  { id:'01', name:'Cloud Skin Tint', type:'Face', shade:'LIGHTWEIGHT · DEWY FINISH', price:14500, rating:'4.9', reviews:128, badge:'BESTSELLER', image:'photo-1611930022073-b7a4ba5fcccd', tone:'sand', color:'#e7c9aa' },
   { id:'02', name:'Soft Focus Lip Oil', type:'Lips', shade:'ROSEWATER · NON-STICKY', price:9800, rating:'5.0', reviews:96, badge:'JUST IN', image:'photo-1586495777744-4413f21062fa', tone:'rose', color:'#c8857b' },
-  { id:'03', name:'Sunday Ritual Cleanser', type:'Skin', shade:'GENTLE · CREAMY · CLEAN', price:12500, rating:'4.8', reviews:74, badge:'SKIN LOVES IT', image:'photo-1556228720-195a672e8a03', tone:'sage', color:'#9d9274' },
+  { id:'03', name:'Featherlight Brow Gel', type:'Eyes', shade:'SOFT HOLD · NATURAL DEFINITION', price:12500, rating:'4.8', reviews:74, badge:'BROW FAVOURITE', image:'photo-1512496015851-a90fb38ba796', tone:'sage', color:'#9d9274' },
   { id:'04', name:'Daylight Cream Blush', type:'Cheeks', shade:'SOFT FLUSH · BUILDABLE', price:11000, rating:'4.9', reviews:88, badge:'CUSTOMER FAVOURITE', image:'photo-1522335789203-aabd1fc54bc9', tone:'peach', color:'#bd785c' },
-  { id:'05', name:'Silk Veil SPF 30', type:'Skin', shade:'NO WHITE CAST · EVERY DAY', price:18500, rating:'4.9', reviews:102, badge:'NEW FORMULA', image:'photo-1556229010-6c3f2c9ca5f8', tone:'sun', color:'#ddba80' },
+  { id:'05', name:'Soft Focus Makeup Primer', type:'Face', shade:'SMOOTH BASE · FRESH FINISH', price:18500, rating:'4.9', reviews:102, badge:'NEW FORMULA', image:'photo-1556229010-6c3f2c9ca5f8', tone:'sun', color:'#ddba80' },
   { id:'06', name:'The Good Brow Pencil', type:'Eyes', shade:'NATURAL · EASY TO USE', price:8500, rating:'4.7', reviews:61, badge:'EASY DOES IT', image:'photo-1512496015851-a90fb38ba796', tone:'lilac', color:'#71624f' },
   { id:'07', name:'Velvet Matte Lipstick', type:'Lips', shade:'SOFT MATTE · COMFORT COLOUR', price:12500, rating:'4.9', reviews:54, badge:'NEW SHADE', image:'photo-1586495777744-4413f21062fa', tone:'rose', color:'#a84f60' },
-  { id:'08', name:'Dew Drop Serum', type:'Skin', shade:'DAILY HYDRATION · LIGHTWEIGHT', price:16800, rating:'4.8', reviews:47, badge:'SKIN FAVOURITE', image:'photo-1608248543803-ba4f8c70ae0b', tone:'sage', color:'#a9b89a' },
-  { id:'09', name:'Butter Balm Moisturizer', type:'Skin', shade:'RICH COMFORT · DAILY CARE', price:15500, rating:'4.9', reviews:63, badge:'SOFT SKIN DAYS', image:'photo-1571781926291-c477ebfd024b', tone:'sand', color:'#d7bf9e' },
+  { id:'08', name:'Everyday Liquid Foundation', type:'Face', shade:'BUILDABLE COVERAGE · NATURAL FINISH', price:16800, rating:'4.8', reviews:47, badge:'COMPLEXION FAVOURITE', image:'photo-1608248543803-ba4f8c70ae0b', tone:'sage', color:'#a9b89a' },
+  { id:'09', name:'Sheer Tint Lip Balm', type:'Lips', shade:'SOFT COLOUR · COMFORTING FEEL', price:15500, rating:'4.9', reviews:63, badge:'EVERYDAY LIP FAVOURITE', image:'photo-1586495777744-4413f21062fa', tone:'sand', color:'#d7bf9e' },
   { id:'10', name:'Golden Hour Bronzer', type:'Cheeks', shade:'WARM GLOW · BLENDABLE', price:13200, rating:'4.8', reviews:39, badge:'SUN-KISSED', image:'photo-1596462502278-27bfdc403348', tone:'sun', color:'#bf8c5b' },
-  { id:'11', name:'Soft Set Pressed Powder', type:'Skin', shade:'SOFT FOCUS · LIGHT FEEL', price:11800, rating:'4.7', reviews:31, badge:'EASY DOES IT', image:'photo-1631214524020-7e18db9a8f92', tone:'sand', color:'#d8c8b0' },
+  { id:'11', name:'Soft Set Pressed Powder', type:'Face', shade:'SOFT FOCUS · LIGHT FEEL', price:11800, rating:'4.7', reviews:31, badge:'EASY DOES IT', image:'photo-1631214524020-7e18db9a8f92', tone:'sand', color:'#d8c8b0' },
   { id:'12', name:'Lash Day Mascara', type:'Eyes', shade:'LENGTHENING · EVERYDAY BLACK', price:10500, rating:'4.9', reviews:58, badge:'LASH LOVE', image:'photo-1512496015851-a90fb38ba796', tone:'lilac', color:'#333129' },
   { id:'13', name:'Evening Edit Eyeshadow', type:'Eyes', shade:'SIX SOFT · SHIMMERING SHADES', price:17900, rating:'4.8', reviews:42, badge:'YOUR GO-TO PALETTE', image:'photo-1522335789203-aabd1fc54bc9', tone:'rose', color:'#988078' },
   { id:'14', name:'Rose Glow Highlighter', type:'Cheeks', shade:'SUBTLE SHEEN · BUILDABLE', price:12700, rating:'4.9', reviews:36, badge:'A LITTLE GLOW', image:'photo-1596704017254-9b121068fb31', tone:'peach', color:'#d3aa8f' },
-  { id:'15', name:'Barely There Concealer', type:'Skin', shade:'NATURAL COVERAGE · SKIN-LIKE', price:13900, rating:'4.8', reviews:44, badge:'YOUR SHADE, YOUR WAY', image:'photo-1601049541289-9b1b7bbbfe19', tone:'sand', color:'#c9aa8d' },
-  { id:'16', name:'Gentle Melt Cleansing Balm', type:'Skin', shade:'MELTS MAKEUP · RINSES CLEAN', price:14800, rating:'4.9', reviews:51, badge:'NIGHT-TIME FAVOURITE', image:'photo-1556228720-195a672e8a03', tone:'sage', color:'#a89f86' },
-  { id:'17', name:'Petal Polish Nail Colour', type:'Nails', shade:'SHEER ROSE · GLOSSY FINISH', price:7200, rating:'4.7', reviews:26, badge:'A LITTLE POP OF COLOUR', image:'photo-1604654894610-df63bc536371', tone:'rose', color:'#ce8e97' },
+  { id:'15', name:'Barely There Concealer', type:'Face', shade:'NATURAL COVERAGE · SKIN-LIKE', price:13900, rating:'4.8', reviews:44, badge:'YOUR SHADE, YOUR WAY', image:'photo-1601049541289-9b1b7bbbfe19', tone:'sand', color:'#c9aa8d' },
+  { id:'16', name:'Precision Liquid Eyeliner', type:'Eyes', shade:'FINE TIP · DEEP BLACK', price:14800, rating:'4.9', reviews:51, badge:'NIGHT-OUT FAVOURITE', image:'photo-1512496015851-a90fb38ba796', tone:'sage', color:'#a89f86' },
+  { id:'17', name:'Petal Soft Lip Liner', type:'Lips', shade:'SHEER ROSE · EASY BLEND', price:7200, rating:'4.7', reviews:26, badge:'A LITTLE LIP DEFINITION', image:'photo-1586495777744-4413f21062fa', tone:'rose', color:'#ce8e97' },
   { id:'18', name:'The Everyday Glow Set', type:'Sets', shade:'THREE EVERYDAY FAVOURITES', price:32000, rating:'5.0', reviews:22, badge:'A LOVELY LITTLE SET', image:'photo-1608248543803-ba4f8c70ae0b', tone:'sun', color:'#c8a77a' },
 ];
 const naira = n => `₦${n.toLocaleString('en-NG')}`;
@@ -47,7 +47,7 @@ function App(){
   async function signIn(){if(!supabase){show('Add Supabase keys to .env to enable Google sign-in');return}const {error}=await supabase.auth.signInWithOAuth({provider:'google',options:{redirectTo:window.location.origin}});if(error)show(error.message)}
   async function placeOrder(e){e.preventDefault();setLoading(true);const f=new FormData(e.currentTarget), payload={customer:{name:f.get('name'),email:f.get('email'),phone:f.get('phone'),address:f.get('address'),city:f.get('city'),note:f.get('note')},items:cart.map(i=>({id:i.id,quantity:i.qty})),userId:user?.id||null};
     try{if(!supabase)throw new Error('Add your Supabase project settings to .env to enable checkout.');const {data,error}=await supabase.functions.invoke('create-order',{body:payload});if(error)throw error;if(data?.error)throw new Error(data.error);setOrderDone(true);setCart([]);if(cartId)supabase.functions.invoke('cart',{body:{action:'clear',cartId}})}catch(err){show(err.message||'Could not place your order. Please try again.')}finally{setLoading(false)}}
-  const categories=['All','Skin','Lips','Cheeks','Eyes','Nails','Sets'];
+  const categories=['All','Face','Lips','Cheeks','Eyes','Sets'];
   const filtered=catalog.filter(p=>(active==='All'||p.type===active)&&(!query||`${p.name} ${p.type} ${p.shade||''}`.toLowerCase().includes(query.toLowerCase())));
   return <>
     <div className="announcement">A little treat, on us: <strong>free delivery</strong> on orders over ₦50,000 <ArrowRight size={13}/></div>

@@ -67,10 +67,10 @@ revoke all on public.cart_snapshots from anon, authenticated;
 grant select on public.products to anon, authenticated;
 
 insert into public.products (id,name,category,description,price_ngn,image_url) values
-('01','Cloud Skin Tint','Skin','Lightweight, dewy everyday skin tint.',14500,'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd'),
+('01','Cloud Skin Tint','Face','Lightweight, dewy everyday makeup tint.',14500,'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd'),
 ('02','Soft Focus Lip Oil','Lips','A comfortable, non-sticky rosewater lip oil.',9800,'https://images.unsplash.com/photo-1586495777744-4413f21062fa'),
-('03','Sunday Ritual Cleanser','Skin','A gentle, creamy daily cleanser.',12500,'https://images.unsplash.com/photo-1556228720-195a672e8a03'),
+('03','Featherlight Brow Gel','Eyes','A soft-hold brow gel for natural definition.',12500,'https://images.unsplash.com/photo-1512496015851-a90fb38ba796'),
 ('04','Daylight Cream Blush','Cheeks','A buildable, soft-flush cream blush.',11000,'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9'),
-('05','Silk Veil SPF 30','Skin','Everyday SPF 30 designed to leave no white cast.',18500,'https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8'),
+('05','Soft Focus Makeup Primer','Face','A smoothing makeup primer for a fresh-looking base.',18500,'https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8'),
 ('06','The Good Brow Pencil','Eyes','An easy-to-use pencil for natural-looking brows.',8500,'https://images.unsplash.com/photo-1512496015851-a90fb38ba796')
 on conflict (id) do update set name=excluded.name,category=excluded.category,description=excluded.description,price_ngn=excluded.price_ngn,image_url=excluded.image_url;
