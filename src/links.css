@@ -1,0 +1,13 @@
+.info-section{padding:50px 11%;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:18px 7%;border-top:1px solid var(--line);background:#faf9f6}
+.info-section h2{font:500 34px/1.15 'Playfair Display',serif;margin:10px 0;color:#302f28}
+.info-section h2 em{color:#75846d}
+.info-section>p,.shipping-copy p{font-size:12px;line-height:1.9;color:#79766c;margin:0}
+.info-section>.text-link{grid-column:2;justify-self:start}
+.shipping-section{background:#f4f2eb}
+.shipping-copy p+p{margin-top:10px}
+.saved-actions{display:flex;gap:14px;align-items:center;margin-top:12px}
+.saved-actions button{display:flex;align-items:center;gap:5px;border:0;border-bottom:1px solid #b9b5aa;background:transparent;padding:0 0 3px;font-size:10px;color:#4c5e4e}
+.saved-actions button+button{color:#89857b}
+.wish-btn{color:#8e8074}
+.wish-btn:has(svg[fill="currentColor"]){color:#b47676}
+@media(max-width:650px){.info-section{padding:36px 7%;grid-template-columns:1fr;gap:12px}.info-section h2{font-size:29px}.info-section>p,.shipping-copy p{font-size:11px}.info-section>.text-link{grid-column:1}}
