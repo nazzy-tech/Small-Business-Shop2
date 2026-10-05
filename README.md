@@ -1,6 +1,6 @@
 # Zam's Beauty
 
-A responsive beauty storefront and delivery checkout built with React, Vite and Supabase. The product catalogue, anonymous browser cart snapshots, orders and newsletter list live in Supabase/Postgres. Checkout validates prices against the database on the server before saving. Confirmation email delivery uses Mailgun from a Supabase Edge Function. Google sign-in uses the Supabase Auth Google provider.
+A responsive beauty storefront and delivery checkout built with React, Vite and Supabase. The product catalogue, device-specific guest carts, account-wide signed-in carts, orders and newsletter list live in Supabase/Postgres. Checkout validates prices against the database on the server before saving. Confirmation email delivery uses Mailgun from a Supabase Edge Function. Google sign-in uses the Supabase Auth Google provider.
 
 ## Run locally
 
