@@ -5,3 +5,8 @@ dist/
 !.env.example
 .vercel/
 .netlify/
+.expo/
+mobile/.expo/
+mobile/.env
+mobile/android/
+mobile/ios/

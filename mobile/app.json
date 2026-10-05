@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "Zam's Beauty",
+    "slug": "zams-beauty",
+    "scheme": "zamsbeauty",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": { "supportsTablet": true, "bundleIdentifier": "com.zamsbeauty.shop" },
+    "android": { "package": "com.zamsbeauty.shop", "adaptiveIcon": { "backgroundColor": "#fff8f3" } },
+    "plugins": ["expo-web-browser"]
+  }
+}

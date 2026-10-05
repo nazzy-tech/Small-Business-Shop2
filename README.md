@@ -46,3 +46,9 @@ Deploy the Vite app to a static host (for example, Netlify or Vercel) with `VITE
 ## Checkout and fulfilment
 
 The checkout calculates a ₦2,000 delivery charge below ₦50,000 and free delivery at ₦50,000 or above. This is a configured starting point and should be updated to reflect the shop's actual delivery pricing and coverage. Checkout currently records the customer and order and explains that the team will confirm payment and delivery; no card charge or payment-provider integration is configured.
+
+## Mobile app and shared carts
+
+The Expo iOS/Android app is in [`mobile/`](mobile/README.md). Configure its `mobile/.env` with the same Supabase project URL and publishable key used by the website, then run `cd mobile`, `npm install`, and `npx expo start`. It uses the same product table, `cart` function, `create-order` function and Google Auth provider as the web app.
+
+Signed-in carts are stored by Supabase user ID. The account-cart migration adds owner-only reads and enables Realtime on `cart_snapshots`, so signed-in users see cart changes on their other device within moments. Apply migrations and redeploy the `cart` Edge Function to enable this behavior. Add `zamsbeauty://auth/callback` to Supabase Auth's redirect allow list for native Google sign-in. Guests retain their per-device cart until they sign in.
